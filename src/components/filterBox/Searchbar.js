@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import useFetch from '../../hooks/useFetch'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Slider from '../imageSlider/Slider';
 import Footer from '../footer/footer';
 import Navbar from '../Navbar';
 import './SearchbarStyle.css'
+import { ReactComponent as Mapicon } from '../../assets/map.svg'
+import SearchCity from '../filterBox/SearchCity'
+import FilterType from '../filterBox/FilterType'
+import PropertyFilter from '../filterBox/PropertyFilter'
+import Allfilter from '../filtercontainer/Allfilter';
 
 export default function Searchbar() {
 
@@ -18,6 +23,7 @@ export default function Searchbar() {
             <div className='navcontainer'>
                 <Navbar mode="black" />
             </div>
+            <Allfilter/>
             <div className='search_result_container'>
                 <p className='search_result_name'>Search Result</p>
                 <div className="search_result_items">

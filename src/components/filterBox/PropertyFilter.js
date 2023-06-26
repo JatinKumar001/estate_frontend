@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import './PropertyFilter.css'
 import useFetch from '../../hooks/useFetch'
 import { ReactComponent as DownArrow } from '../../assets/DownArrow.svg'
+import { Link } from 'react-router-dom'
 
 function PropertyFilter() {
 
@@ -26,7 +27,7 @@ function PropertyFilter() {
 
     const { data, loading, error } = useFetch(`/property`)
 
-    const Menu = ['a', 'b', 'c', 'd'];
+    const allpropertytype = [... new Set(data.map((item) => {return item.propertytype}))]
 
     return (
         <>
@@ -41,8 +42,10 @@ function PropertyFilter() {
                     {isPropertyMenuOpen &&
                         <ul className='property-dropdown-list'>
                             {
-                                data.map((item) => (
-                                    <li className="property-dropdown-list-items" key={item.id}>{item.propertytype}</li>
+                                allpropertytype.map((item, index) => (
+                                    <Link to={`/searchbar/${item}`} style={{ color: "black" }}>
+                                        <li className="property-dropdown-list-items" key={index}>{item}</li>
+                                    </Link>
                                 ))
                             }
                         </ul>
