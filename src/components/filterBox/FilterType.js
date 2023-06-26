@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import './FilterType.css'
 import useFetch from '../../hooks/useFetch'
 import { ReactComponent as DownArrow } from '../../assets/DownArrow.svg'
+import { Link } from 'react-router-dom'
 
 function FilterType() {
 
@@ -21,17 +22,14 @@ function FilterType() {
         };
     }, [isFilterMenuOpen])
 
-    const Menu = ['a', 'b', 'c', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd'];
-
-    const [city, setCity] = useState();
-
-
     const { data, loading, error } = useFetch(`/property`)
+
+    const allfeatues = [... new Set(data.map((item) => {return item.feature}))]
 
     return (
         <>
             <div className="filter-dropdown-main-container">
-                <div className="filter-dropdown-container" ref={ref}>
+                <div className="filter-dropdown-container">
                     <button className='filter-dropdpwn-btn' onClick={() => setisFilterMenuOpen(!isFilterMenuOpen)}>
                         <div className="filter-dropdown-btn-div">
                             <DownArrow />
@@ -41,8 +39,10 @@ function FilterType() {
                     {isFilterMenuOpen &&
                         <ul className='filter-dropdown-list'>
                             {
-                                data.map((item) => (
-                                    <li className="filter-dropdown-list-items" key={item._id}>{item.feature}</li>
+                                allfeatues.map((item, index) => (
+                                    <Link to={`/searchbar/${item}`} style={{color:"black"}}>
+                                        <li className="filter-dropdown-list-items" key={index}>{item}</li>
+                                    </Link>
                                 ))
                             }
                         </ul>

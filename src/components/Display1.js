@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Display1Style.css'
+import { Link } from 'react-router-dom'
 
 export default function Display1() {
     return (
@@ -12,16 +13,18 @@ export default function Display1() {
                     <p>Where Dreams Become Reality: Your Key to Unparalleted  Real Estate Opportunities!</p>
                 </div>
                 <div className='explore'>
-                    <button className='btn-explore'>
-                        <div className='double_lessthan'>
-                            <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 2.23828L8.78571 9.024L2.35714 15.4526" stroke="currentcolor" strokeWidth="3" strokeLinecap="round" />
-                                <path d="M10.2143 2.23828L17 9.024L10.5714 15.4526" stroke="currentcolor" strokeWidth="3" strokeLinecap="round" />
-                            </svg>
-                        </div>
-                        <span className='btn-span'></span>
-                        Explore in VR
-                    </button>
+                    <Link to={'/property'}>
+                        <button className='btn-explore'>
+                            <div className='double_lessthan'>
+                                <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 2.23828L8.78571 9.024L2.35714 15.4526" stroke="currentcolor" strokeWidth="3" strokeLinecap="round" />
+                                    <path d="M10.2143 2.23828L17 9.024L10.5714 15.4526" stroke="currentcolor" strokeWidth="3" strokeLinecap="round" />
+                                </svg>
+                            </div>
+                            <span className='btn-span'></span>
+                            Explore in VR
+                        </button>
+                    </Link>
                 </div>
             </div>
             {/* <div className='shade_bottom'></div> */}

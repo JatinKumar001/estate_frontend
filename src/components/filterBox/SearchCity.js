@@ -3,6 +3,7 @@ import './SearchCity.css'
 import useFetch from '../../hooks/useFetch'
 // import downArrow from '../../assets/downArrow.png'
 import { ReactComponent as DownArrow } from '../../assets/DownArrow.svg'
+import { Link } from 'react-router-dom'
 
 function SearchCity() {
 
@@ -26,6 +27,8 @@ function SearchCity() {
 
   const { data, loading, error } = useFetch(`/property`)
 
+  const alllocation = [... new Set(data.map((item) => {return item.location}))]
+
   return (
     <>
       <div className="search-dropdown-main-container">
@@ -40,8 +43,10 @@ function SearchCity() {
           {isMenuOpen &&
             <ul className='dropdown-list'>
               {
-                data.map((item) => (
-                  <li className="dropdown-list-items" key={item._id}>{item.location}</li>
+                alllocation.map((item, index) => (
+                  <Link to={`/searchbar/${item}`} style={{color:"black"}}>
+                  <li className="dropdown-list-items" key={index}>{item}</li>
+                  </Link>
                 ))
               }
             </ul>
