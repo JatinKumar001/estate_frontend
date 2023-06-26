@@ -22,7 +22,7 @@ function FilterType() {
         };
     }, [isFilterMenuOpen])
 
-    const { data, loading, error } = useFetch(`/property`)
+    const { data, loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property`)
 
     const allfeatues = [... new Set(data.map((item) => {return item.feature}))]
 

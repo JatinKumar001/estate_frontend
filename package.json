@@ -41,7 +41,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://real-estate-backend-wihx.onrender.com/api",
   "devDependencies": {
     "@types/jquery": "^3.5.16"
   }

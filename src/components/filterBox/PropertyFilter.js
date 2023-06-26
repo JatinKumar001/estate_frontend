@@ -25,7 +25,7 @@ function PropertyFilter() {
     const [city, setCity] = useState();
 
 
-    const { data, loading, error } = useFetch(`/property`)
+    const { data, loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property`)
 
     const allpropertytype = [... new Set(data.map((item) => {return item.propertytype}))]
 

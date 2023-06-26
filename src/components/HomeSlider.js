@@ -3,7 +3,7 @@ import Slider from './imageSlider/Slider'
 import useFetch from '../hooks/useFetch'
 
 export default function HomeSlider() {
-  const { data, loading, error } = useFetch('/property')
+  const { data, loading, error } = useFetch('https://real-estate-backend-wihx.onrender.com/api/property')
 
     return (
         <div>

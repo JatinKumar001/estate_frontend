@@ -25,7 +25,7 @@ function SearchCity() {
   const [city, setCity] = useState();
 
 
-  const { data, loading, error } = useFetch(`/property`)
+  const { data, loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property`)
 
   const alllocation = [... new Set(data.map((item) => {return item.location}))]
 
