@@ -7,8 +7,7 @@ import close from '../../assets/close.png'
 import useFetch from '../../hooks/useFetch'
 
 function ProfilePage() {
-    const { data, loading, error} = useFetch('/users')
-    console.log(data)
+    const { data, loading, error} = useFetch('https://real-estate-backend-wihx.onrender.com/api/users')
     
   return (
     <>

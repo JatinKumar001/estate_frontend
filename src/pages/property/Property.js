@@ -15,7 +15,7 @@ export default function Property() {
     const location = useLocation()
     const id = location.pathname.split("/")[2];
 
-    const { data, laoding, error } = useFetch(`/property/${id}`)
+    const { data, laoding, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property/${id}`)
 
     return (
         <div>

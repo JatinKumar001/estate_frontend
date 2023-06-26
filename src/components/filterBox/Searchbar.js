@@ -16,7 +16,7 @@ export default function Searchbar() {
     const location = useLocation()
     const key = location.pathname.split("/")[2];
 
-    const { data, loading, error } = useFetch(`/property/search/${key}`)
+    const { data, loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property/search/${key}`)
 
     return (
         <div>

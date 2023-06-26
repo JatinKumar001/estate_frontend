@@ -8,7 +8,7 @@ export default function Midnav() {
 
     const [value, setvalue] = useState("London");
 
-    const { data , loading, error } = useFetch(`/property?location=${value}`)
+    const { data , loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property?location=${value}`)
 
     return (
         <div>

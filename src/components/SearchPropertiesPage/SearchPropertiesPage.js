@@ -14,7 +14,7 @@ import HomeSlider from '../HomeSlider'
 function SearchPropertiesPage() {
 
   const [changevalue, setchangevalue] = useState()
-  const { data, loading, error } = useFetch("/property")
+  const { data, loading, error } = useFetch("https://real-estate-backend-wihx.onrender.com/api/property")
 
   $(".showmoreslider").on('click', function () {
     $(".sssparentslider").addClass("showparent");

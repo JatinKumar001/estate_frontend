@@ -4,7 +4,7 @@ import useFetch from '../../hooks/useFetch'
 import '../propertyslider/PropertysliderStyle.css'
 
 export default function Propertyslider() {
-  const { data, loading, error } = useFetch('/property')
+  const { data, loading, error } = useFetch('https://real-estate-backend-wihx.onrender.com/api/property')
   return (
     <div>
       <div className='nearby_property_container'>
