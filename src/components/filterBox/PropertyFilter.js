@@ -27,7 +27,7 @@ function PropertyFilter() {
 
     const { data, loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property`)
 
-    const allpropertytype = [... new Set(data.map((item) => {return item.propertytype}))]
+    const allpropertytype = [... new Set(data.map((item) => { return item.propertytype }))]
 
     return (
         <>
@@ -44,7 +44,8 @@ function PropertyFilter() {
                             {
                                 allpropertytype.map((item, index) => (
                                     <Link to={`/searchbar/${item}`} style={{ color: "black" }}>
-                                        <li className="property-dropdown-list-items" key={index}>{item}</li>
+                                        <li className="property-dropdown-list-items" key={index}>
+                                            <p>{item}</p></li>
                                     </Link>
                                 ))
                             }

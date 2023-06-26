@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 function FilterType() {
 
+
     const [isFilterMenuOpen, setisFilterMenuOpen] = useState(false)
 
     const ref = useRef()
@@ -24,7 +25,7 @@ function FilterType() {
 
     const { data, loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property`)
 
-    const allfeatues = [... new Set(data.map((item) => {return item.feature}))]
+    const allfeatues = [... new Set(data.map((item) => { return item.feature }))]
 
     return (
         <>
@@ -40,8 +41,9 @@ function FilterType() {
                         <ul className='filter-dropdown-list'>
                             {
                                 allfeatues.map((item, index) => (
-                                    <Link to={`/searchbar/${item}`} style={{color:"black"}}>
-                                        <li className="filter-dropdown-list-items" key={index}>{item}</li>
+                                    <Link to={`/searchbar/${item}`} style={{ color: "black" }}>
+                                        <li className="filter-dropdown-list-items" key={index}>
+                                            <p>{item}</p></li>
                                     </Link>
                                 ))
                             }
