@@ -38,9 +38,11 @@ export default function Allfilter() {
                 </div>
                 <div className="show-on-map-btn">
                     <div className='btm__nav'>
-                        <div className='btm__nav-btn'>
-                            <Mapicon />
-                            Show on Map</div>
+                        <Link to='/Map'>
+                            <div className='btm__nav-btn'>
+                                <Mapicon />
+                                Show on Map</div>
+                        </Link>
                     </div>
                 </div>
             </div>

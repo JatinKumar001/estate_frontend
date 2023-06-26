@@ -27,7 +27,7 @@ function SearchCity() {
 
   const { data, loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property`)
 
-  const alllocation = [... new Set(data.map((item) => {return item.location}))]
+  const alllocation = [... new Set(data.map((item) => { return item.location }))]
 
   return (
     <>
@@ -44,8 +44,10 @@ function SearchCity() {
             <ul className='dropdown-list'>
               {
                 alllocation.map((item, index) => (
-                  <Link to={`/searchbar/${item}`} style={{color:"black"}}>
-                  <li className="dropdown-list-items" key={index}>{item}</li>
+                  <Link to={`/searchbar/${item}`} style={{ color: "black" }}>
+                    <li className="dropdown-list-items" key={index}>
+                      <p>{item}</p>
+                    </li>
                   </Link>
                 ))
               }
