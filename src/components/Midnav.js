@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import '../styles/MidnavStyle.css'
 import useFetch from "../hooks/useFetch"
 import Slider from './imageSlider/Slider'
+import Spinner from './Spinner'
 
 export default function Midnav() {
 
@@ -27,11 +28,13 @@ export default function Midnav() {
             <div className="search_result_items">
                 <div className='midnavslider' id='showhiddensliderdiv'>
                     <div className="super-parent-slider">
+                    {loading ? (<Spinner/>) : (
                         <>
                             {data.map((item) => (
                                 <Slider key={item._id} item={item} />
                             ))}
                         </>
+                    )}
                     </div>
                 </div>
             </div>

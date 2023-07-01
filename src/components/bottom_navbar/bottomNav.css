@@ -34,6 +34,7 @@
     /* background: red; */
     overflow: hidden;
     /* z-index: ; */
+    cursor: pointer;
 }
 
 

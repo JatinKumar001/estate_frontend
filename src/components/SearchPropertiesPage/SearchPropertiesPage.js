@@ -9,6 +9,7 @@ import { ReactComponent as Cross } from '../../assets/cross.svg'
 import { ReactComponent as Filter } from '../../assets/filter.svg'
 import useFetch from '../../hooks/useFetch'
 import $ from 'jquery'
+import Spinner from '../Spinner'
 import HomeSlider from '../HomeSlider'
 
 function SearchPropertiesPage() {
@@ -48,7 +49,7 @@ function SearchPropertiesPage() {
 
   return (
     <>
-    <Allfilter/>
+      <Allfilter />
       <div className="search-results-container-main">
         <div className="search-results-filters-shown">
           <h1>Search Results </h1>
@@ -78,11 +79,13 @@ function SearchPropertiesPage() {
       <div className="super-super-parent-slider">
         <div className='sssparentslider' id='showhiddensliderdiv'>
           <div className="super-parent-slider">
-            <>
-              {data.map((item) => (
-                <Slider key={item._id} item={item} />
-              ))}
-            </>
+            {loading ? (<Spinner/>) : (
+              <>
+                {data.map((item) => (
+                  <Slider key={item._id} item={item} />
+                ))}
+              </>
+            )}
           </div>
         </div>
       </div>

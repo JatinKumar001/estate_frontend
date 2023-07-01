@@ -3,6 +3,7 @@ import './FilterType.css'
 import useFetch from '../../hooks/useFetch'
 import { ReactComponent as DownArrow } from '../../assets/DownArrow.svg'
 import { Link } from 'react-router-dom'
+import Spinner from '../Spinner'
 
 function FilterType() {
 
@@ -24,7 +25,7 @@ function FilterType() {
 
     const { data, loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property`)
 
-    const allfeatues = [... new Set(data.map((item) => {return item.feature}))]
+    const allfeatues = [... new Set(data.map((item) => { return item.feature }))]
 
     return (
         <>
@@ -40,7 +41,7 @@ function FilterType() {
                         <ul className='filter-dropdown-list'>
                             {
                                 allfeatues.map((item, index) => (
-                                    <Link to={`/searchbar/${item}`} style={{color:"black"}}>
+                                    <Link to={`/searchbar/${item}`} style={{ color: "black" }}>
                                         <li className="filter-dropdown-list-items" key={index}>{item}</li>
                                     </Link>
                                 ))

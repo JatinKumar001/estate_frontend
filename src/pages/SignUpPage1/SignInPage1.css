@@ -75,3 +75,26 @@
     margin-left: 10px;
     margin-right: 7px;
 }
+
+.sign_btn{
+    display: flex;
+    justify-content: center;
+}
+
+.signin_btn{
+    margin: 6rem;
+    margin-bottom: 7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.signupifnew{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.signupifnew p{
+    text-decoration: underline;
+    cursor: pointer;
+}
