@@ -5,8 +5,7 @@ import Property from './pages/property/Property';
 import VrPage from './pages/VrPage/VrPage';
 import List from './pages/list/List';
 import AboutUs from './pages/AboutUs/AboutUs';
-import SignUpPage1 from './pages/SignUpPage1/SignUpPage1';
-import SignUp from './components/SignUpPage/SignUp';
+import SignIpPage1 from './pages/SignUpPage1/SignInPage1';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import Searchbar from './components/filterBox/Searchbar';
 import Map from './components/MapIntegration/Map'
@@ -17,7 +16,6 @@ import MapPage from './components/MapPage/MapPage';
 function App() {
   return (
     <>
-      {/* <FilterBtnRightPopUp /> */}
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -25,11 +23,11 @@ function App() {
           <Route path='/explorevr/:id' element={<VrPage />} />
           <Route path='/property' element={<List />} />
           <Route path='/property/:id' element={<Property />} />
-          <Route path='/profile' element={<ProfilePage />} />
-          <Route path='/signup' element={<SignUpPage1 />} />
-          <Route path='/searchbar/:key' element={<Searchbar />} />
           <Route path='/MapPage' element={<MapPage />} />
           <Route path='/searchbar' element={<Property />} />
+          <Route path='/profile' element={<ProfilePage />} />
+          <Route path='/signin' element={<SignIpPage1 />} />
+          <Route path='/searchbar/:key' element={<Searchbar />} />
         </Routes>
       </BrowserRouter>
     </>
