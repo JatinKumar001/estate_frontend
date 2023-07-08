@@ -10,7 +10,8 @@
 
 .btm__nav {
     background-color: transparent;
-    margin: 6rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
     margin-bottom: 7rem;
     display: flex;
     flex-direction: row;

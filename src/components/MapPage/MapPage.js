@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
+import Navbar from '../Navbar';
+import BottomNav from '../bottom_navbar/bottomNav';
+import Footer from '../footer/footer';
+import Map from '../MapIntegration/Map';
+import './MapPage.css'
 import SearchCity from '../filterBox/SearchCity'
 import PropertyFilter from '../filterBox/PropertyFilter'
 import FilterType from '../filterBox/FilterType'
-import './AllfilterStyle.css'
+// import './AllfilterStyle.css'
 import { ReactComponent as Search } from '../../assets/search.svg'
 import { ReactComponent as Mapicon } from '../../assets/map.svg'
+import { ReactComponent as ListIcon } from '../../assets/List.svg'
 import { Link } from 'react-router-dom'
+// import './AllfilterStyles.css'
 
-export default function Allfilter() {
+
+function MapPage() {
 
     const [searchvalue, setSearchvalue] = useState()
 
@@ -16,7 +24,10 @@ export default function Allfilter() {
     }
 
     return (
-        <div>
+        <>
+            <div className='navcontainer'>
+                <Navbar mode="black" />
+            </div>
             <div className="parent-main-filterbox-container">
                 <div className="main-filterbox-container">
                     <div className="filters-container">
@@ -36,16 +47,26 @@ export default function Allfilter() {
                         </div>
                     </Link>
                 </div>
-                <div className="show-on-map-btn">
+                <div className="show-on-list-btn">
                     <div className='btm__nav'>
-                        <Link to='/MapPage'>
+                        <Link to='/Property'>
                             <div className='btm__nav-btn'>
-                                <Mapicon />
-                                Show on Map</div>
+                                <ListIcon />
+                                Show in List</div>
                         </Link>
                     </div>
                 </div>
             </div>
-        </div>
+            <div className="parent-map">
+                <div className='map-included'>
+                    <Map />
+                </div>
+            </div>
+            <BottomNav />
+            <Footer />
+
+        </>
     )
 }
+
+export default MapPage

@@ -11,7 +11,7 @@ import FilterType from '../filterBox/FilterType'
 import PropertyFilter from '../filterBox/PropertyFilter'
 import Allfilter from '../filtercontainer/Allfilter';
 
-export default function Searchbar() {
+export default function FilterSearchPage() {
 
     const location = useLocation()
     const key = location.pathname.split("/")[2];

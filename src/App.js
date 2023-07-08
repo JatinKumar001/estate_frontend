@@ -10,10 +10,14 @@ import SignUp from './components/SignUpPage/SignUp';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import Searchbar from './components/filterBox/Searchbar';
 import Map from './components/MapIntegration/Map'
+import FilterBtnRightPopUp from './components/FilterBtnRight/FilterBtnRightPopUp';
+import MapPage from './components/MapPage/MapPage';
+// import Maps from './components/MapIntegration/Map';
 
 function App() {
   return (
     <>
+      {/* <FilterBtnRightPopUp /> */}
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -24,7 +28,8 @@ function App() {
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/signup' element={<SignUpPage1 />} />
           <Route path='/searchbar/:key' element={<Searchbar />} />
-          <Route path='/Map' element={<Map />} />
+          <Route path='/MapPage' element={<MapPage />} />
+          <Route path='/searchbar' element={<Property />} />
         </Routes>
       </BrowserRouter>
     </>
