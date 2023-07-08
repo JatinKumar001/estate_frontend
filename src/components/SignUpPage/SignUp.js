@@ -4,6 +4,7 @@ import google from '../../assets/google.png'
 import fb from '../../assets/fb2.png'
 import ig from '../../assets/insta2.png'
 import './SignUp.css'
+import { Link } from 'react-router-dom'
 
 function SignUp() {
     return (
@@ -14,9 +15,11 @@ function SignUp() {
                         <div className="userbtn">
                             <img src={user} alt="" />
                         </div>
-                        <div className="login-signup-btn">
-                            <p>Login / SignUp with E-mail</p>
-                        </div>
+                        <Link to={'/signin'} className='login-signup-btn' style={{ color: "black" }}>
+                            <div>
+                                <p>Login / SignUp with E-mail</p>
+                            </div>
+                        </Link>
                     </div>
                     <div className="signup-page-div">
                         <div className="signup-google-btn">

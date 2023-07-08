@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './FilterBtnRightPopUp.css'
 import useFetch from '../../hooks/useFetch'
 import { ReactComponent as Cross } from '../../assets/cross.svg'
-import { useBootstrapBreakpoints } from 'react-bootstrap/esm/ThemeProvider'
 // import useFetch from '../../hooks/useFetch'
 
 

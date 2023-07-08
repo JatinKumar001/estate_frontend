@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 import '../styles/MidnavStyle.css'
 import useFetch from "../hooks/useFetch"
 import Slider from './imageSlider/Slider'
+import Spinner from './Spinner'
 
 export default function Midnav() {
 
     const [value, setvalue] = useState("London");
 
-    const { data , loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property?location=${value}`)
+    const { data, loading, error } = useFetch(`https://real-estate-backend-wihx.onrender.com/api/property?location=${value}`)
 
     return (
         <div>
@@ -27,11 +28,13 @@ export default function Midnav() {
             <div className="search_result_items">
                 <div className='midnavslider' id='showhiddensliderdiv'>
                     <div className="super-parent-slider">
-                        <>
-                            {data.map((item) => (
-                                <Slider key={item._id} item={item} />
-                            ))}
-                        </>
+                        {loading ? (<Spinner />) : (
+                            <>
+                                {data.map((item) => (
+                                    <Slider key={item._id} item={item} />
+                                ))}
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
