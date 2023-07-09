@@ -26,7 +26,7 @@ function SignUpPage1() {
         e.preventDefault();
         dispatch({ type: "LOGIN_START" });
         try {
-            const res = await axios.post("http://localhost:8080/api/auth/login", credentials);
+            const res = await axios.post("https://real-estate-backend-wihx.onrender.com/api/auth/login", credentials);
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
             navigate("/")
         } catch (err) {

@@ -1,17 +1,25 @@
 import React from 'react'
 import './flexboxSlider.css';
+import $ from 'jquery'
 function FlexboxSlider() {
 
-  const cards = document.getElementsByClassName("card");
-  for (let card of cards) {
-    card.addEventListener("mouseover", () => {
-      if (!card.classList.contains("active")) {
-        for (let c of cards) {
-          c.classList.remove("active");
-          card.classList.add('active');
-        }
-      }
-    })
+  // const cards = document.getElementsByClassName("card");
+  // for (let card of cards) {
+  //   card.addEventListener("mouseover", () => {
+  //     if (!card.classList.contains("active")) {
+  //       for (let c of cards) {
+  //         c.classList.remove("active");
+  //         card.classList.add('active');
+  //       }
+  //     }
+  //   })
+  // }
+
+  function handleClick() {
+    $(".card").on('click', function () {
+      $(".card").removeClass("active");
+      $(this).addClass("active");
+    });
   }
 
   return (
@@ -20,7 +28,7 @@ function FlexboxSlider() {
         <h4>Read What Our Customers have to say</h4>
       </div>
       <div className='flexbox_slider'>
-        <div className="card active">
+        <div className="card active" onClick={handleClick}>
           <div className='flexbox_slider-content'>
             <div className='content'>
               <div className='data'>
@@ -32,7 +40,7 @@ function FlexboxSlider() {
             </div>
           </div>
         </div>
-        <div className="card ">
+        <div className="card " onClick={handleClick}>
           {/* bg = flexbox_slider-content */}
           <div className='flexbox_slider-content'>
             <div className='content'>
@@ -46,7 +54,7 @@ function FlexboxSlider() {
             </div>
           </div>
         </div>
-        <div className="card ">
+        <div className="card " onClick={handleClick}>
           {/* bg = flexbox_slider-content */}
           <div className='flexbox_slider-content'>
             <div className='content'>
