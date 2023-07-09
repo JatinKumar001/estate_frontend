@@ -2,6 +2,12 @@ import React from 'react'
 import './Vr_displayStyle.css'
 import $ from 'jquery'
 import { Link } from 'react-router-dom';
+import poster1 from '../../../assets/alphathum_poster.jpg'
+import poster2 from '../../../assets/Alphathum_NEW AND FINAL.jpg'
+import alpha2 from '../../../assets/alpha2.mp4'
+import { DefaultPlayer as Video } from 'react-html5video'
+import 'react-html5video/dist/styles.css'
+import ReactPlayer from 'react-player';
 
 export default function Vr_display(props) {
 
@@ -31,7 +37,20 @@ export default function Vr_display(props) {
                 <path d="M19 13L27 18L19 23V13Z" stroke="#828282" stroke-width="3" stroke-linejoin="round" />
               </svg>
             </div>
-            <div class="label1">hello</div>
+            <div class="label1">
+
+
+              <Video
+                style={{ width: "100%", height: "100%" }}
+                // autoplay={model}
+                controls={['PlayPause', 'Seek', 'Time', 'Volume', 'FullScreen']}
+                poster={poster1}
+
+              >
+                <source src={alpha2} type='video/webm' />
+              </Video>
+
+            </div>
           </div>
           <div class="card1 active1 vrcontainer1" id="vr1">
             <div class="shadow1 vr1">
@@ -84,7 +103,9 @@ export default function Vr_display(props) {
                 <path d="M11.8461 15.5384C13.8853 15.5384 15.5384 13.8853 15.5384 11.8461C15.5384 9.80691 13.8853 8.15381 11.8461 8.15381C9.80691 8.15381 8.15381 9.80691 8.15381 11.8461C8.15381 13.8853 9.80691 15.5384 11.8461 15.5384Z" stroke="#828282" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <div class="label1">hello</div>
+            <div class="label1">
+              <img src={poster2} alt="image" style={{ height: "500px", width: "910px" }} />
+            </div>
           </div>
         </div>
       </section>
