@@ -20,12 +20,12 @@ export default function Map() {
     return (
         <>
             <GoogleMap
-                zoom={14}
-                center={{ lat: 30.31, lng: 78.03 }}
+                zoom={18}
+                center={{ lat: 28.50881307092298, lng: 77.42020657424001 }}
                 mapContainerClassName="map-container"
             // onLoad={onLoad}
             >
-                <Marker position={{ lat: 30.31, lng: 78.03 }} />
+                <Marker position={{ lat: 28.50881307092298, lng: 77.42020657424001 }} />
             </GoogleMap>
         </>
     );
