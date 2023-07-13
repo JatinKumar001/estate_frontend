@@ -4,7 +4,7 @@ import { ReactComponent as Google } from '../../assets/google.svg'
 import Footer from '../../components/footer/footer'
 import Navbar from '../../components/Navbar'
 import { AuthContext } from '../../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -61,7 +61,9 @@ function SignUpPage1() {
                         <button disabled={loading} onClick={handleClick} className='btm__nav-btn'>Sign In</button>
                         {error && <span>{error.message}</span>}
                         <div className='signupifnew'>
-                            <p>Create your Account</p>
+                            <Link to={"/register"} style={{ color: "black" }}>
+                                <p>Create your Account</p>
+                            </Link>
                         </div>
                     </div>
                 </div>
