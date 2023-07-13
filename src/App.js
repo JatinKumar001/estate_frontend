@@ -11,6 +11,7 @@ import Searchbar from './components/filterBox/Searchbar';
 import Map from './components/MapIntegration/Map'
 import FilterBtnRightPopUp from './components/FilterBtnRight/FilterBtnRightPopUp';
 import MapPage from './components/MapPage/MapPage';
+import Register from './pages/register/Register';
 // import Maps from './components/MapIntegration/Map';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path='/searchbar' element={<Property />} />
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/signin' element={<SignIpPage1 />} />
+          <Route path='/register' element={<Register />} />
           <Route path='/searchbar/:key' element={<Searchbar />} />
         </Routes>
       </BrowserRouter>
